@@ -1,0 +1,13 @@
+.tabs ul {
+  border-bottom-color: #dbdbdb;
+
+  li {
+    &.is-active a {
+      border-bottom-color: #1db954;
+      color: #1db954;
+    }
+    a {
+      color: #dbdbdb;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<div class="music">
+  <div class="float-btn">
+    <button (click)="removeItem.emit(song.id)" class="btn-close pos-abs">
+      <span class="fas fa-times"></span> remove
+    </button>
+  </div>
+  <figure class="image">
+    <img [src]="song.imgUrl" alt="" />
+  </figure>
+  <div class="music-content">
+    <table>
+      <tr>
+        <td><strong>Artist</strong></td>
+        <td>{{ song.artist }}</td>
+      </tr>
+      <tr>
+        <td><strong>Strong</strong></td>
+        <td>{{ song.album }}</td>
+      </tr>
+      <tr>
+        <td><strong>Release</strong></td>
+        <td>{{ song.release }}</td>
+      </tr>
+      <tr>
+        <td><strong>Genres</strong></td>
+        <td>
+          <span class="genre" *ngFor="let genre of song.genres">{{
+            genre
+          }}</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

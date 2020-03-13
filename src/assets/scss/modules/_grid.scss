@@ -1,0 +1,12 @@
+.container {
+  &.is-grip {
+    max-width: 55rem;
+  }
+}
+
+.playlist-container {
+  padding-top: 100px;
+  background: #181818;
+  min-height: 100vh;
+  color: #fff;
+}

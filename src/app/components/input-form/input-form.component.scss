@@ -1,0 +1,75 @@
+$form-color: #dbdbdb;
+
+.form-playlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "form-content form-input" "form-bottom form-bottom";
+  gap: 3rem;
+  row-gap: 1.5rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 3rem;
+  background-color: #222;
+
+  .form-label--content {
+    grid-area: form-content;
+    figure.image {
+      display: block;
+      width: 200px;
+      height: 200px;
+      background: #292929;
+      margin: 0 auto 20px;
+    }
+    table td {
+      padding: 0 5px;
+      color: $form-color;
+      strong {
+        color: inherit;
+      }
+    }
+  }
+
+  .form-playlist--content {
+    grid-area: form-input;
+    flex-basis: 17rem;
+
+    .select select,
+    .textarea,
+    .input {
+      background-color: #292929;
+      border-color: #292929;
+      color: $form-color;
+
+      &.is-danger {
+        box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.125em rgba(19, 197, 53, 0.22);
+      }
+    }
+
+    .field > label {
+      margin-bottom: 3px;
+      display: inline-block;
+    }
+  }
+
+  .form-buttom--section {
+    grid-area: form-bottom;
+
+    .input-play--button {
+      display: block;
+      margin: 0 auto;
+      background: transparent;
+      color: $form-color;
+      border-color: $form-color;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: $form-color;
+        color: #222;
+      }
+    }
+  }
+}

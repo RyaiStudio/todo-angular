@@ -1,0 +1,53 @@
+<div class="columns">
+  <div class="column">
+    <form [formGroup]="submitForm" (ngSubmit)="addToPlaylist(submitForm.value)">
+      <div class="form-playlist">
+        <div class="form-label--content">
+          <figure class="image">
+            <img [src]="formInputs[4].value" alt="" />
+          </figure>
+          <table>
+            <tr
+              *ngFor="let formInput of formInputs"
+              [hidden]="formInput.inputId === 'thumbnailUrl'"
+            >
+              <td>
+                <strong>{{ formInput.label }}</strong>
+              </td>
+              <td>{{ formInput.value }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="form-playlist--content">
+          <div class="field" *ngFor="let formInput of formInputs">
+            <label [for]="formInput.inputId">{{ formInput.label }}</label>
+            <div class="control">
+              <input
+                [ngClass]="{ 'input is-small': true, 'is-danger': true }"
+                type="text"
+                [(ngModel)]="formInput.value"
+                [(formControlName)]="formInput.inputId"
+              />
+            </div>
+            <span
+              class="form-error"
+              *ngIf="
+                submitForm.get(formInput.inputId).invalid &&
+                submitForm.get(formInput.inputId).touched
+              "
+            >
+              <!-- {{ getLoad(submitForm) }} -->
+              {{ formInput.error }}
+            </span>
+          </div>
+        </div>
+
+        <div class="form-buttom--section">
+          <button type="submit" class="button input-play--button">
+            <strong>Add Playlist</strong>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
